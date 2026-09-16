@@ -53,7 +53,7 @@ export function NaijaSoftLogo({
             </filter>
           </defs>
 
-          {/* Pinwheel Quadrant 1 - Top Left */}
+          {/* Pinwheel Quadrant 1 - Top Left. */}
           <path
             d="M50 15 C30.67 15 15 30.67 15 50 L35 50 C35 41.72 41.72 35 50 35 L50 15 Z"
             fill="url(#nsGrad)"
