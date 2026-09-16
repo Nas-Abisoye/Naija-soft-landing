@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { CheckCircle2, Star, Check, Download, ArrowUpRight, ArrowRight, Activity } from "lucide-react";
 import { NaijaSoftLogo } from "@/components/NaijaSoftLogo";
 import { ConsultationModal } from "@/components/ConsultationModal";
 
@@ -271,7 +270,7 @@ export default function LandingPage() {
       sector: "Fintech & Credit Rails",
       quote:
         "In fintech lending, sub-second underwriting and zero ledger discrepancies are non-negotiable. Naijasoft engineered our entire credit evaluation and automated disbursement engine. We now disburse 200K+ loans monthly with bank-grade 99.99% reliability.",
-      name: "Chukwuemeka Obi",
+      name: "Executive Leadership",
       role: "Chief Executive Officer",
       company: "QuickCredit NG",
       location: "Lagos & Abuja, Nigeria",
@@ -284,7 +283,7 @@ export default function LandingPage() {
       dotColor: "#06b6d4",
       badgeColor: "bg-cyan-500/10 text-cyan-300 border-cyan-500/30",
       avatarBg: "bg-gradient-to-br from-cyan-500/25 to-blue-700/40 text-cyan-200 border-cyan-500/40",
-      initials: "CO",
+      initials: "QC",
     },
     {
       id: "tryb",
@@ -292,8 +291,8 @@ export default function LandingPage() {
       sector: "Haute Couture & E-Commerce",
       quote:
         "Naijasoft transformed our haute couture house into a high-speed digital atelier. The custom preorder engine and interactive Adire archives handled international runway traffic effortlessly. Our global consultation inquiries doubled in the first month.",
-      name: "Oluwaseun Adedeji",
-      role: "Creative Director & Founder",
+      name: "Creative Direction",
+      role: "Founder & Creative Director",
       company: "Tryb Fusyon",
       location: "Victoria Island, Lagos",
       statNumber: "2.4x",
@@ -305,7 +304,7 @@ export default function LandingPage() {
       dotColor: "#f59e0b",
       badgeColor: "bg-amber-500/10 text-amber-300 border-amber-500/30",
       avatarBg: "bg-gradient-to-br from-amber-500/25 to-amber-700/40 text-amber-200 border-amber-500/40",
-      initials: "OA",
+      initials: "TF",
     },
     {
       id: "carelink",
@@ -313,7 +312,7 @@ export default function LandingPage() {
       sector: "Hospital & HealthTech Platform",
       quote:
         "Building a healthcare network requires strict NDPR compliance and absolute platform stability. Naijasoft delivered an on-demand verified clinician network that connects Nigerian families with home care nurses in under 15 minutes.",
-      name: "Dr. Zainab Aliyu",
+      name: "Clinical Directorate",
       role: "Chief Medical Officer & Co-Founder",
       company: "Care Link Nigeria",
       location: "Maitama, Abuja",
@@ -326,7 +325,7 @@ export default function LandingPage() {
       dotColor: "#14b8a6",
       badgeColor: "bg-teal-500/10 text-teal-300 border-teal-500/30",
       avatarBg: "bg-gradient-to-br from-teal-500/25 to-emerald-700/40 text-teal-200 border-teal-500/40",
-      initials: "ZA",
+      initials: "CL",
     },
     {
       id: "odunda",
@@ -334,7 +333,7 @@ export default function LandingPage() {
       sector: "Agri-Food Direct-to-Consumer",
       quote:
         "From Ogun State farmlands to Lagos doorsteps, Naijasoft built our batch-tracking food commerce engine and automated WhatsApp ordering pipelines. It eliminated logistics bottlenecks and brought our dispatch time down to under 24 hours.",
-      name: "Babatunde Odunda",
+      name: "Commercial Directorate",
       role: "Managing Director",
       company: "Odùndá Foodconcept",
       location: "Ogun & Lagos, Nigeria",
@@ -347,7 +346,7 @@ export default function LandingPage() {
       dotColor: "#10b981",
       badgeColor: "bg-emerald-500/10 text-emerald-300 border-emerald-500/30",
       avatarBg: "bg-gradient-to-br from-emerald-500/25 to-teal-700/40 text-emerald-200 border-emerald-500/40",
-      initials: "BO",
+      initials: "OF",
     },
     {
       id: "tradebridge",
@@ -355,7 +354,7 @@ export default function LandingPage() {
       sector: "Cross-Border Settlements",
       quote:
         "Their multi-currency escrow architecture and customs documentation portal accelerated our international trade clearing times from 7 days down to under 4 hours across 5 African corridors. Truly Silicon Valley caliber engineering.",
-      name: "Folake Adeleke",
+      name: "Operations Directorate",
       role: "Chief Operating Officer",
       company: "TradeBridge Global",
       location: "Pan-African Trade Corridors",
@@ -368,7 +367,7 @@ export default function LandingPage() {
       dotColor: "#a855f7",
       badgeColor: "bg-purple-500/10 text-purple-300 border-purple-500/30",
       avatarBg: "bg-gradient-to-br from-purple-500/25 to-indigo-700/40 text-purple-200 border-purple-500/40",
-      initials: "FA",
+      initials: "TB",
     },
     {
       id: "farmconnect",
@@ -376,8 +375,8 @@ export default function LandingPage() {
       sector: "Agritech Field Logistics",
       quote:
         "Naijasoft automated our entire field aggregation workflow across 14 rural collection hubs in 8 weeks flat. Field officer productivity shot up by 50% while paperwork reconciliation errors dropped to zero.",
-      name: "Amina Yusuf",
-      role: "Operations Lead",
+      name: "Field Operations Directorate",
+      role: "Head of Field Logistics",
       company: "FarmConnect Africa",
       location: "Nigeria & Ghana",
       statNumber: "14",
@@ -389,7 +388,7 @@ export default function LandingPage() {
       dotColor: "#22c55e",
       badgeColor: "bg-green-500/10 text-green-300 border-green-500/30",
       avatarBg: "bg-gradient-to-br from-green-500/25 to-emerald-700/40 text-green-200 border-green-500/40",
-      initials: "AY",
+      initials: "FC",
     },
   ];
 
@@ -480,16 +479,6 @@ export default function LandingPage() {
         {/* ── Main Content Block ── */}
         <div className="relative z-10 max-w-[1400px] mx-auto w-full px-5 sm:px-8 lg:px-12 my-auto py-6">
 
-          {/* Eyebrow / Live Venture Lab Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white/90 text-xs font-manrope font-medium mb-6 shadow-inner">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="font-semibold text-emerald-300 uppercase tracking-widest text-[11px]">
-              Venture Studio &amp; Enterprise Software Lab
-            </span>
-            <span className="text-white/40 hidden sm:inline">•</span>
-            <span className="text-white/70 text-[11px] hidden sm:inline">Lagos • London • Nairobi</span>
-          </div>
-
           {/* Giant Headline — Helios/EarthRise mega-type */}
           <h1 className="font-outfit font-extrabold text-white tracking-[-0.03em] leading-[1.02] max-w-5xl">
             <span className="block text-[clamp(2.6rem,6.8vw,6.2rem)]">
@@ -507,22 +496,6 @@ export default function LandingPage() {
           <p className="mt-6 font-manrope text-[15px] sm:text-[17px] text-white/80 leading-relaxed max-w-2xl font-light">
             We architect, build, and scale mission-critical fintech engines, high-throughput SaaS dashboards, hospital platforms, and automated venture applications powering Africa&apos;s leading brands.
           </p>
-
-          {/* Quick Capability Tags */}
-          <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] font-manrope text-white/70">
-            <span className="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-emerald-300 font-medium">
-              Fintech Rails &amp; Payouts
-            </span>
-            <span className="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-cyan-300 font-medium">
-              Hospital &amp; HealthTech Systems
-            </span>
-            <span className="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-amber-300 font-medium">
-              Luxury E-Commerce Ateliers
-            </span>
-            <span className="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-teal-300 font-medium">
-              Agri-Food Supply Chain
-            </span>
-          </div>
 
           {/* CTA Action Row */}
           <div className="mt-8 flex flex-wrap items-center gap-3.5">
@@ -1007,7 +980,7 @@ export default function LandingPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {solutions[selectedSolutionTab].features.map((feat, fidx) => (
                   <div key={fidx} className="flex items-start gap-2.5 text-xs sm:text-sm font-manrope text-gray-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <span className="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span>
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -1019,10 +992,10 @@ export default function LandingPage() {
                   className="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 text-gray-950 font-outfit font-bold text-xs sm:text-sm hover:opacity-90 transition-opacity flex items-center gap-2"
                 >
                   <span>Build This Solution</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>→</span>
                 </button>
                 <div className="text-xs font-mono text-cyan-400 flex items-center gap-1.5">
-                  <Activity className="w-3.5 h-3.5" />
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                   {solutions[selectedSolutionTab].metrics}
                 </div>
               </div>
@@ -1708,8 +1681,8 @@ export default function LandingPage() {
 
           {formSubmitted ? (
             <div className="py-12 text-center space-y-4">
-              <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto animate-bounce">
-                <Check className="w-8 h-8" />
+              <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto text-2xl font-bold">
+                ✓
               </div>
               <h3 className="font-outfit text-2xl font-bold text-white">
                 Thank You, {formData.fullName || "Partner"}!
@@ -1760,7 +1733,7 @@ export default function LandingPage() {
                   <input
                     required
                     type="text"
-                    placeholder="e.g. Babatunde Fashola"
+                    placeholder="Enter your full name"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     className="w-full bg-gray-950/80 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors"
@@ -1861,10 +1834,10 @@ export default function LandingPage() {
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-gray-950 font-outfit font-bold text-base hover:opacity-95 transition-all shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2"
+                  className="w-full py-4 rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-gray-950 font-outfit font-bold text-base hover:opacity-95 transition-all shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2 group"
                 >
                   <span>Submit Consultation Request</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
                 </button>
               </div>
             </form>
@@ -1890,10 +1863,10 @@ export default function LandingPage() {
             <div className="pt-3 flex flex-wrap items-center justify-center gap-4">
               <button
                 onClick={() => handleOpenModal("client")}
-                className="px-8 py-4 rounded-2xl bg-white text-gray-950 font-outfit font-bold text-sm sm:text-base hover:bg-gray-100 transition-all shadow-xl flex items-center gap-2"
+                className="px-8 py-4 rounded-2xl bg-white text-gray-950 font-outfit font-bold text-sm sm:text-base hover:bg-gray-100 transition-all shadow-xl flex items-center gap-2 group"
               >
                 <span>Book a Free Consultation</span>
-                <ArrowRight className="w-4 h-4 text-emerald-600" />
+                <span className="text-emerald-600 font-bold transition-transform group-hover:translate-x-1">→</span>
               </button>
 
               <button

@@ -1,0 +1,41 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nsFaviconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e599" />
+      <stop offset="50%" stop-color="#00d2b4" />
+      <stop offset="100%" stop-color="#00b4d8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Rounded Container for high contrast on all browser tabs -->
+  <rect width="100" height="100" rx="24" fill="#070c18" />
+  <rect width="98" height="98" x="1" y="1" rx="23" stroke="rgba(255,255,255,0.12)" stroke-width="2" />
+
+  <!-- Pinwheel Quadrant 1 - Top Left -->
+  <path
+    d="M50 18 C32.33 18 18 32.33 18 50 L36 50 C36 42.27 42.27 36 50 36 L50 18 Z"
+    fill="url(#nsFaviconGrad)"
+  />
+  <!-- Pinwheel Quadrant 2 - Top Right -->
+  <path
+    d="M82 50 C82 32.33 67.67 18 50 18 L50 36 C57.73 36 64 42.27 64 50 L82 50 Z"
+    fill="url(#nsFaviconGrad)"
+  />
+  <!-- Pinwheel Quadrant 3 - Bottom Right -->
+  <path
+    d="M50 82 C67.67 82 82 67.67 82 50 L64 50 C64 57.73 57.73 64 50 64 L50 82 Z"
+    fill="url(#nsFaviconGrad)"
+  />
+  <!-- Pinwheel Quadrant 4 - Bottom Left -->
+  <path
+    d="M18 50 C18 67.67 32.33 82 50 82 L50 64 C42.27 64 36 57.73 36 50 L18 50 Z"
+    fill="url(#nsFaviconGrad)"
+  />
+
+  <!-- Cutout Accents -->
+  <circle cx="50" cy="50" r="7.5" fill="#070c18" />
+  <circle cx="37" cy="37" r="3.5" fill="#070c18" />
+  <circle cx="63" cy="37" r="3.5" fill="#070c18" />
+  <circle cx="63" cy="63" r="3.5" fill="#070c18" />
+  <circle cx="37" cy="63" r="3.5" fill="#070c18" />
+</svg>

@@ -1,18 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import {
-  X,
-  CheckCircle2,
-  Building2,
-  Mail,
-  User,
-  Phone,
-  Briefcase,
-  FileText,
-  DollarSign,
-  ArrowRight,
-} from "lucide-react";
+import React, { useState, useEffect } from "react";
 import { NaijaSoftLogo } from "./NaijaSoftLogo";
 
 interface ConsultationModalProps {
@@ -34,9 +22,16 @@ export function ConsultationModal({
     phone: "",
     organization: "",
     service: "Custom Enterprise Software",
-    budget: "$10,000 - $25,000",
+    budget: "$15,000 - $50,000",
     message: "",
   });
+
+  // Sync state whenever defaultType changes or modal opens
+  useEffect(() => {
+    if (isOpen) {
+      setInquiryType(defaultType);
+    }
+  }, [defaultType, isOpen]);
 
   if (!isOpen) return null;
 
@@ -52,113 +47,155 @@ export function ConsultationModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8">
-      {/* Backdrop */}
+      {/* Backdrop with rich blur */}
       <div
         onClick={resetAndClose}
-        className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-300"
+        className="fixed inset-0 bg-black/80 backdrop-blur-xl transition-opacity duration-300"
       />
 
-      {/* Modal Dialog */}
-      <div className="relative w-full max-w-2xl bg-[#0e1526] border border-gray-800/90 rounded-3xl shadow-2xl shadow-emerald-500/10 overflow-hidden z-10 my-auto max-h-[90vh] flex flex-col">
-        {/* Glow Header */}
-        <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-400 via-cyan-400 to-indigo-500" />
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+      {/* Modal Dialog Box */}
+      <div className="relative w-full max-w-2xl bg-[#070c18] border border-white/[0.12] rounded-3xl shadow-2xl shadow-emerald-500/10 overflow-hidden z-10 my-auto max-h-[92vh] flex flex-col">
+        {/* Subtle Ambient Radial Lighting */}
+        <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-400 via-cyan-400 to-teal-400" />
+        <div className="pointer-events-none absolute -top-24 -right-24 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -left-24 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
 
-        {/* Modal Topbar */}
-        <div className="p-6 pb-4 border-b border-gray-800/80 flex items-center justify-between shrink-0">
+        {/* Top Navigation Bar */}
+        <div className="px-6 sm:px-8 py-5 border-b border-white/[0.08] flex items-center justify-between shrink-0 bg-white/[0.02]">
           <NaijaSoftLogo size="sm" />
           <button
             onClick={resetAndClose}
-            className="p-2 rounded-full text-gray-400 hover:text-white hover:bg-gray-800/60 transition-colors"
+            aria-label="Close dialog"
+            className="w-9 h-9 rounded-full bg-white/[0.04] hover:bg-white/[0.1] border border-white/[0.08] text-white/70 hover:text-white flex items-center justify-center text-sm transition-all duration-200"
           >
-            <X className="w-5 h-5" />
+            ✕
           </button>
         </div>
 
-        {/* Modal Body */}
-        <div className="p-6 sm:p-8 overflow-y-auto custom-scrollbar">
+        {/* Modal Scrollable Content */}
+        <div className="p-6 sm:p-8 overflow-y-auto custom-scrollbar space-y-6">
           {isSubmitted ? (
-            <div className="py-10 text-center space-y-5">
-              <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/20 animate-bounce">
-                <CheckCircle2 className="w-9 h-9" />
+            /* Submission Confirmation State */
+            <div className="py-8 text-center space-y-6">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center justify-center mx-auto text-2xl font-bold shadow-lg shadow-emerald-500/20">
+                ✓
               </div>
+
               <div className="space-y-2">
-                <h3 className="font-outfit text-2xl font-bold text-white">
-                  Request Received Successfully!
+                <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-400 font-semibold">
+                  Inquiry Dispatched to Senior Architecture Team
+                </span>
+                <h3 className="font-outfit text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  Thank You, {formData.name || "Partner"}!
                 </h3>
-                <p className="font-manrope text-sm text-gray-300 max-w-md mx-auto">
-                  Thank you, <span className="text-emerald-400 font-semibold">{formData.name || "Partner"}</span>. Our engineering & executive team will review your inquiry from <span className="text-cyan-300">{formData.organization || "your company"}</span> and reach out within 24 hours.
+                <p className="font-manrope text-sm text-gray-300 max-w-md mx-auto leading-relaxed">
+                  We have logged your specifications for{" "}
+                  <span className="text-emerald-300 font-semibold">
+                    {formData.organization || "your enterprise"}
+                  </span>
+                  . A principal engineering director will review your brief and schedule an architecture discovery call within 24 hours.
                 </p>
               </div>
-              <div className="pt-4">
+
+              {/* Summary Metadata Card */}
+              <div className="max-w-md mx-auto p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08] text-left text-xs font-manrope space-y-2 text-gray-300">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-500 font-medium">Inquiry Type:</span>
+                  <span className="text-white font-semibold">
+                    {inquiryType === "client" ? "Technical Build / Custom Software" : "Investor Relations & Deck"}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-500 font-medium">Focus Domain:</span>
+                  <span className="text-cyan-300 font-mono text-[11px]">{formData.service}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-500 font-medium">Turnaround SLA:</span>
+                  <span className="text-emerald-400 font-semibold">Within 24 Hours</span>
+                </div>
+              </div>
+
+              <div className="pt-2">
                 <button
                   onClick={resetAndClose}
-                  className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-gray-950 font-outfit font-bold text-sm hover:opacity-95 transition-all shadow-md"
+                  className="px-8 py-3.5 rounded-full bg-white text-gray-950 font-outfit font-bold text-xs sm:text-sm hover:bg-gray-100 transition-all shadow-lg shadow-white/10"
                 >
-                  Return to Website
+                  Return to Website →
                 </button>
               </div>
             </div>
           ) : (
+            /* Active Form State */
             <div className="space-y-6">
-              {/* Type Switcher */}
-              <div className="flex bg-gray-900/90 p-1 rounded-xl border border-gray-800">
+              
+              {/* Segmented Control Pill Switcher */}
+              <div className="flex bg-black/50 p-1.5 rounded-2xl border border-white/[0.08]">
                 <button
                   type="button"
                   onClick={() => setInquiryType("client")}
-                  className={`flex-1 py-2 text-xs sm:text-sm font-outfit font-semibold rounded-lg transition-all ${
+                  className={`flex-1 py-2.5 px-3 text-xs sm:text-[13px] font-manrope font-semibold rounded-xl transition-all duration-200 ${
                     inquiryType === "client"
-                      ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-gray-950 shadow-md"
+                      ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-gray-950 font-bold shadow-md"
                       : "text-gray-400 hover:text-white"
                   }`}
                 >
-                  Build a Solution / Consultation
+                  Build a Solution / Technical Build
                 </button>
                 <button
                   type="button"
                   onClick={() => setInquiryType("investor")}
-                  className={`flex-1 py-2 text-xs sm:text-sm font-outfit font-semibold rounded-lg transition-all ${
+                  className={`flex-1 py-2.5 px-3 text-xs sm:text-[13px] font-manrope font-semibold rounded-xl transition-all duration-200 ${
                     inquiryType === "investor"
-                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-gray-950 shadow-md"
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-gray-950 font-bold shadow-md"
                       : "text-gray-400 hover:text-white"
                   }`}
                 >
-                  Investor Deck & Partnership
+                  Investor Deck &amp; Syndicate
                 </button>
               </div>
 
-              <div>
-                <h3 className="font-outfit text-xl sm:text-2xl font-bold text-white">
+              {/* Editorial Header */}
+              <div className="space-y-1.5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-mono font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>
+                    {inquiryType === "client" ? "Principal Architect Intake" : "Institutional VC & Syndicate Intake"}
+                  </span>
+                </div>
+                <h3 className="font-outfit text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
                   {inquiryType === "client"
                     ? "Let's Build Something Exceptional"
-                    : "Partner with Naija Soft Innovations"}
+                    : "Partner with Naijasoft Innovations"}
                 </h3>
-                <p className="font-manrope text-xs sm:text-sm text-gray-400 mt-1">
+                <p className="font-manrope text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
                   {inquiryType === "client"
-                    ? "Tell us about your project goals. We deliver custom software, automation, and fintech infrastructure."
-                    : "Access our investor memorandum, traction deck, and strategic roadmap for African market expansion."}
+                    ? "Tell us about your venture goals. We architect high-availability custom software, payment rails, and enterprise automation."
+                    : "Access our confidential investor deck, audited financial traction telemetry, and Pan-African expansion roadmap."}
                 </p>
               </div>
 
+              {/* Form Body without icons on labels */}
               <form onSubmit={handleSubmit} className="space-y-4 font-manrope">
+                
+                {/* Row 1: Name & Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-300 mb-1.5 flex items-center gap-1.5">
-                      <User className="w-3.5 h-3.5 text-emerald-400" /> Full Name *
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-gray-300 mb-2">
+                      Full Name <span className="text-emerald-400 font-mono">*</span>
                     </label>
                     <input
                       required
                       type="text"
-                      placeholder="e.g. Oluwaseun Adeleke"
+                      placeholder="Enter your full name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-gray-900/90 border border-gray-700/80 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                      className="w-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/[0.09] focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/30 rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none transition-all duration-200"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-gray-300 mb-1.5 flex items-center gap-1.5">
-                      <Mail className="w-3.5 h-3.5 text-emerald-400" /> Work Email *
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-gray-300 mb-2">
+                      Work Email <span className="text-emerald-400 font-mono">*</span>
                     </label>
                     <input
                       required
@@ -166,15 +203,16 @@ export function ConsultationModal({
                       placeholder="name@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-gray-900/90 border border-gray-700/80 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                      className="w-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/[0.09] focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/30 rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none transition-all duration-200"
                     />
                   </div>
                 </div>
 
+                {/* Row 2: Company & WhatsApp */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-300 mb-1.5 flex items-center gap-1.5">
-                      <Building2 className="w-3.5 h-3.5 text-cyan-400" /> Company / Organization *
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-gray-300 mb-2">
+                      Company / Organization <span className="text-emerald-400 font-mono">*</span>
                     </label>
                     <input
                       required
@@ -182,104 +220,114 @@ export function ConsultationModal({
                       placeholder="e.g. Apex Ventures Ltd"
                       value={formData.organization}
                       onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                      className="w-full bg-gray-900/90 border border-gray-700/80 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                      className="w-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/[0.09] focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/30 rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none transition-all duration-200"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-gray-300 mb-1.5 flex items-center gap-1.5">
-                      <Phone className="w-3.5 h-3.5 text-cyan-400" /> WhatsApp / Phone Number
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-gray-300 mb-2">
+                      WhatsApp / Phone <span className="text-gray-500 font-normal font-mono text-[10px]">(Optional)</span>
                     </label>
                     <input
                       type="tel"
                       placeholder="+234 800 000 0000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-gray-900/90 border border-gray-700/80 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                      className="w-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/[0.09] focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/30 rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none transition-all duration-200"
                     />
                   </div>
                 </div>
 
+                {/* Row 3: Focus Area & Budget */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-300 mb-1.5 flex items-center gap-1.5">
-                      <Briefcase className="w-3.5 h-3.5 text-emerald-400" /> Focus Area
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-gray-300 mb-2">
+                      {inquiryType === "client" ? "Core Focus Area" : "Investment Structure"}
                     </label>
                     <select
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full bg-gray-900/90 border border-gray-700/80 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                      className="w-full bg-[#0a101f] border border-white/[0.09] focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-all duration-200 cursor-pointer"
                     >
                       {inquiryType === "client" ? (
                         <>
-                          <option value="Custom Enterprise Software">Custom Enterprise Software</option>
-                          <option value="Fintech & Payment Engine">Fintech & Payment Engine</option>
-                          <option value="AI & Process Automation">AI & Process Automation</option>
-                          <option value="Mobile / Web App Engineering">Mobile / Web App Engineering</option>
-                          <option value="Cloud Architecture & Security">Cloud Architecture & Security</option>
+                          <option value="Custom Enterprise Software" className="bg-[#0a101f] text-white">Custom Enterprise Software</option>
+                          <option value="Fintech & Payment Rails" className="bg-[#0a101f] text-white">Fintech &amp; Payment Rails</option>
+                          <option value="AI & Process Automation" className="bg-[#0a101f] text-white">AI &amp; Process Automation</option>
+                          <option value="Healthcare & MedTech Platforms" className="bg-[#0a101f] text-white">Healthcare &amp; MedTech Platforms</option>
+                          <option value="Agri-Food Supply Chain Commerce" className="bg-[#0a101f] text-white">Agri-Food Supply Chain Commerce</option>
+                          <option value="Cloud Architecture & Security Audits" className="bg-[#0a101f] text-white">Cloud Architecture &amp; Security Audits</option>
                         </>
                       ) : (
                         <>
-                          <option value="Angel / Pre-Seed Investment">Angel / Pre-Seed Investment</option>
-                          <option value="Institutional VC Syndicate">Institutional VC Syndicate</option>
-                          <option value="Strategic Corporate Partnership">Strategic Corporate Partnership</option>
-                          <option value="Pan-African Expansion Joint Venture">Pan-African Expansion Joint Venture</option>
+                          <option value="Institutional VC Syndicate" className="bg-[#0a101f] text-white">Institutional VC Syndicate</option>
+                          <option value="Family Office / Strategic Angel" className="bg-[#0a101f] text-white">Family Office / Strategic Angel</option>
+                          <option value="Corporate Venture Co-Investment" className="bg-[#0a101f] text-white">Corporate Venture Co-Investment</option>
+                          <option value="Pan-African Expansion Joint Venture" className="bg-[#0a101f] text-white">Pan-African Expansion Joint Venture</option>
                         </>
                       )}
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-gray-300 mb-1.5 flex items-center gap-1.5">
-                      <DollarSign className="w-3.5 h-3.5 text-emerald-400" />{" "}
-                      {inquiryType === "client" ? "Estimated Budget" : "Investment Capacity"}
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-gray-300 mb-2">
+                      {inquiryType === "client" ? "Target Budget Tier" : "Investment Allocation"}
                     </label>
                     <select
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full bg-gray-900/90 border border-gray-700/80 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                      className="w-full bg-[#0a101f] border border-white/[0.09] focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-all duration-200 cursor-pointer"
                     >
                       {inquiryType === "client" ? (
                         <>
-                          <option value="$5,000 - $15,000">$5,000 - $15,000 (MVP / Sprint)</option>
-                          <option value="$15,000 - $50,000">$15,000 - $50,000 (Full Platform)</option>
-                          <option value="$50,000+">$50,000+ (Enterprise Scale)</option>
+                          <option value="$10,000 - $25,000 (MVP Sprint)" className="bg-[#0a101f] text-white">$10,000 - $25,000 (Rapid MVP Sprint)</option>
+                          <option value="$25,000 - $75,000 (Core Platform)" className="bg-[#0a101f] text-white">$25,000 - $75,000 (Core Platform)</option>
+                          <option value="$75,000+ (Enterprise Scale)" className="bg-[#0a101f] text-white">$75,000+ (Enterprise Scale &amp; SLA)</option>
                         </>
                       ) : (
                         <>
-                          <option value="$50k - $250k">$50,000 - $250,000</option>
-                          <option value="$250k - $1M">$250,000 - $1,000,000</option>
-                          <option value="$1M+">$1,000,000+</option>
+                          <option value="$100k - $500k" className="bg-[#0a101f] text-white">$100,000 - $500,000</option>
+                          <option value="$500k - $2M" className="bg-[#0a101f] text-white">$500,000 - $2,000,000</option>
+                          <option value="$2M+" className="bg-[#0a101f] text-white">$2,000,000+</option>
                         </>
                       )}
                     </select>
                   </div>
                 </div>
 
+                {/* Row 4: Project Message / Specific Requirements */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1.5 flex items-center gap-1.5">
-                    <FileText className="w-3.5 h-3.5 text-emerald-400" /> Message / Specific Needs
+                  <label className="block text-[11px] uppercase tracking-wider font-semibold text-gray-300 mb-2">
+                    Project Brief / Specific Requirements <span className="text-gray-500 font-normal font-mono text-[10px]">(Optional)</span>
                   </label>
                   <textarea
                     rows={3}
-                    placeholder="Briefly describe your requirements or strategic interest..."
+                    placeholder="Briefly describe your platform goals, current bottlenecks, or strategic interest..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-gray-900/90 border border-gray-700/80 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                    className="w-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/[0.09] focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/30 rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none transition-all duration-200 resize-none"
                   />
                 </div>
 
-                <div className="pt-2">
+                {/* Submit Action & Security Assurance */}
+                <div className="pt-2 space-y-3">
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-gray-950 font-outfit font-bold text-sm hover:opacity-95 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2"
+                    className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 text-gray-950 font-outfit font-bold text-sm tracking-wide transition-all duration-200 shadow-xl shadow-emerald-500/20 hover:shadow-emerald-500/35 flex items-center justify-center gap-2 group"
                   >
-                    <span>{inquiryType === "client" ? "Submit Consultation Request" : "Request Investor Materials"}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <span>
+                      {inquiryType === "client" ? "Submit Technical Consultation Request" : "Request Investor Deck & Data Room"}
+                    </span>
+                    <span className="transition-transform group-hover:translate-x-1 font-bold">→</span>
                   </button>
-                  <p className="text-[11px] text-gray-500 text-center mt-2">
-                    🔒 Protected under strict NDA & privacy compliance. No spam ever.
-                  </p>
+
+                  <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] font-manrope text-gray-400 text-center">
+                    <span>Direct 24hr Lead Architect Review</span>
+                    <span className="text-gray-600">•</span>
+                    <span>Strict NDA Compliance</span>
+                    <span className="text-gray-600">•</span>
+                    <span>Zero Spam Policy</span>
+                  </div>
                 </div>
               </form>
             </div>
@@ -289,3 +337,4 @@ export function ConsultationModal({
     </div>
   );
 }
+

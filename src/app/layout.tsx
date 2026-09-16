@@ -15,9 +15,17 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Naija Soft Landing | Next.js + Tailwind + TypeScript",
+  title: "Naijasoft Innovations | Enterprise Software, Fintech Rails & AI Infrastructure",
   description:
-    "Next.js App Router project configured with Tailwind CSS, TypeScript, and Google Fonts (Manrope & Outfit).",
+    "We engineer high-availability fintech payment rails, hospital healthtech systems, and enterprise automation software across Africa.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
