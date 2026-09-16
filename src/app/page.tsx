@@ -14,7 +14,7 @@ export default function LandingPage() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
 
-  // On-page form state.
+  // On-page form state
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [inquiryType, setInquiryType] = useState<"client" | "investor">("client");
   const [formData, setFormData] = useState({
