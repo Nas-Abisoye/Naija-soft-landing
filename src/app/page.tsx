@@ -9,8 +9,7 @@ export default function LandingPage() {
   const [modalType, setModalType] = useState<"client" | "investor">("client");
   const [selectedSolutionTab, setSelectedSolutionTab] = useState<number>(0);
   const [testimonialCategory, setTestimonialCategory] = useState<string>("all");
-  const [activeSpotlightId, setActiveSpotlightId] = useState<string>("quickcredit");
-  const [investorTab, setInvestorTab] = useState<"financials" | "engineering" | "corridors">("financials");
+  const [activeSpotlightId, setActiveSpotlightId] = useState<string>("carelink");
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
 
@@ -111,13 +110,13 @@ export default function LandingPage() {
     {
       title: "Full-Lifecycle Retainers & Proactive Cloud Scaling",
       description:
-        "We ensure your application thrives long after launch. Our continuous DevOps retainers provide 24/7 cloud telemetry, database query optimization, security vulnerability scans, and 99.99% uptime guarantees.",
+        "We ensure your application thrives long after launch. Our continuous DevOps retainers provide cloud telemetry, database query optimization, and security vulnerability scans built toward enterprise-grade uptime targets.",
       tag: "Enterprise SLA",
       num: "06",
       highlights: [
-        "24/7 automated telemetry monitoring & anomaly alerts",
+        "Automated telemetry monitoring & anomaly alerts",
         "Database indexing & high-concurrency query optimization",
-        "Guaranteed 99.99% multi-region cloud SLA availability",
+        "Multi-region cloud architecture built for high availability",
       ],
     },
   ];
@@ -137,7 +136,7 @@ export default function LandingPage() {
         "Automated KYC/AML verification workflows",
         "Integration with leading African & global switches",
       ],
-      metrics: "$50M+ processed monthly with 99.99% uptime",
+      metrics: "Built for high-throughput, bank-grade transaction processing",
     },
     {
       id: "automation",
@@ -148,11 +147,11 @@ export default function LandingPage() {
         "Transform administrative overhead into seamless digital pipelines. We deploy intelligent document extraction, automated customer fulfillment, and predictive workflows.",
       features: [
         "End-to-end business workflow automation",
-        "50% average reduction in operational overhead",
+        "Designed to cut operational overhead through automation",
         "Real-time ERP, CRM, and accounting synchronization",
         "Custom AI copilots for internal operations",
       ],
-      metrics: "50% boost in organizational productivity",
+      metrics: "Built to boost organizational productivity through automation",
     },
     {
       id: "enterprise",
@@ -167,7 +166,7 @@ export default function LandingPage() {
         "Multi-cloud deployment (AWS, GCP, DigitalOcean)",
         "End-to-end type safety & automated testing",
       ],
-      metrics: "Sub-100ms API response times across Africa",
+      metrics: "Optimized for speed and reliability across African infrastructure",
     },
     {
       id: "growth",
@@ -182,7 +181,7 @@ export default function LandingPage() {
         "SEO optimization & Core Web Vitals perfection",
         "Integrated analytics and conversion funnels",
       ],
-      metrics: "2.4x increase in inbound client conversions",
+      metrics: "Designed to convert visitors into customers and enterprise contracts",
     },
   ];
 
@@ -262,44 +261,23 @@ export default function LandingPage() {
     },
   ];
 
-  // Verified Executive & Client Endorsements
+  // Client Case Studies — factual project summaries, not attributed client quotes
   const testimonials = [
-    {
-      id: "quickcredit",
-      category: "fintech",
-      sector: "Fintech & Credit Rails",
-      quote:
-        "In fintech lending, sub-second underwriting and zero ledger discrepancies are non-negotiable. Naijasoft engineered our entire credit evaluation and automated disbursement engine. We now disburse 200K+ loans monthly with bank-grade 99.99% reliability.",
-      name: "Executive Leadership",
-      role: "Chief Executive Officer",
-      company: "QuickCredit NG",
-      location: "Lagos & Abuja, Nigeria",
-      statNumber: "200K+",
-      statLabel: "Monthly Disbursed Loans",
-      deliverable: "Sub-Second Credit Scoring · Bank-Grade Automated Disbursement Rails",
-      timeline: "8-Week Core Sprint",
-      verifiedMetrics: ["99.99% Core SLA", "Zero Ledger Variance", "Sub-1s Underwrite"],
-      liveUrl: null,
-      dotColor: "#06b6d4",
-      badgeColor: "bg-cyan-500/10 text-cyan-300 border-cyan-500/30",
-      avatarBg: "bg-gradient-to-br from-cyan-500/25 to-blue-700/40 text-cyan-200 border-cyan-500/40",
-      initials: "QC",
-    },
     {
       id: "tryb",
       category: "ecom",
       sector: "Haute Couture & E-Commerce",
       quote:
-        "Naijasoft transformed our haute couture house into a high-speed digital atelier. The custom preorder engine and interactive Adire archives handled international runway traffic effortlessly. Our global consultation inquiries doubled in the first month.",
-      name: "Creative Direction",
-      role: "Founder & Creative Director",
+        "Naijasoft built Tryb Fusyon a digital atelier: a runway catalog, bespoke measurement intake, and an automated cross-border preorder engine for an international fashion audience.",
+      name: "Naijasoft Delivery Team",
+      role: "Project Case Summary",
       company: "Tryb Fusyon",
-      location: "Victoria Island, Lagos",
-      statNumber: "2.4x",
-      statLabel: "Inbound Runway Orders",
-      deliverable: "Bespoke Preorder Engine · High-Concurrency Runway Scaling",
-      timeline: "6-Week Production Rollout",
-      verifiedMetrics: ["2.4x Order Velocity", "Global FX Checkout", "Sub-80ms Load"],
+      location: "Lagos, Nigeria",
+      statNumber: "Global",
+      statLabel: "Preorder Reach",
+      deliverable: "Bespoke Preorder Engine · Runway Catalog",
+      timeline: "Live in Production",
+      verifiedMetrics: ["Global Preorder Engine", "Bespoke Measurement Intake", "Runway Catalog"],
       liveUrl: "https://tryb-fusyon.vercel.app/",
       dotColor: "#f59e0b",
       badgeColor: "bg-amber-500/10 text-amber-300 border-amber-500/30",
@@ -311,16 +289,16 @@ export default function LandingPage() {
       category: "health",
       sector: "Hospital & HealthTech Platform",
       quote:
-        "Building a healthcare network requires strict NDPR compliance and absolute platform stability. Naijasoft delivered an on-demand verified clinician network that connects Nigerian families with home care nurses in under 15 minutes.",
-      name: "Clinical Directorate",
-      role: "Chief Medical Officer & Co-Founder",
+        "Naijasoft built Care Link's on-demand nurse booking platform, including clinical triage flows and NDPR-conscious patient record handling for home healthcare in Nigeria.",
+      name: "Naijasoft Delivery Team",
+      role: "Project Case Summary",
       company: "Care Link Nigeria",
-      location: "Maitama, Abuja",
-      statNumber: "15-Min",
-      statLabel: "Clinical Triage Speed",
-      deliverable: "Verified Clinician Network · NDPR & HIPAA Compliant Telehealth",
-      timeline: "8-Week MVP & Live Sync",
-      verifiedMetrics: ["15-Min Triage Time", "NDPR Certified", "100% Uptime"],
+      location: "Nigeria",
+      statNumber: "On-Demand",
+      statLabel: "Nurse Booking",
+      deliverable: "Clinical Triage · Patient Portals",
+      timeline: "Live in Production",
+      verifiedMetrics: ["Clinical Triage", "Patient Records", "Nurse Dispatch"],
       liveUrl: "https://carelinkapp.co",
       dotColor: "#14b8a6",
       badgeColor: "bg-teal-500/10 text-teal-300 border-teal-500/30",
@@ -332,63 +310,21 @@ export default function LandingPage() {
       category: "agri",
       sector: "Agri-Food Direct-to-Consumer",
       quote:
-        "From Ogun State farmlands to Lagos doorsteps, Naijasoft built our batch-tracking food commerce engine and automated WhatsApp ordering pipelines. It eliminated logistics bottlenecks and brought our dispatch time down to under 24 hours.",
-      name: "Commercial Directorate",
-      role: "Managing Director",
+        "Naijasoft built Odùndá Foods a farm-to-door commerce platform, including fermentation batch tracking and an automated WhatsApp ordering pipeline for Lagos-area delivery.",
+      name: "Naijasoft Delivery Team",
+      role: "Project Case Summary",
       company: "Odùndá Foodconcept",
       location: "Ogun & Lagos, Nigeria",
-      statNumber: "24hr",
-      statLabel: "Dispatch Fulfillment",
-      deliverable: "Automated WhatsApp Commerce · Fermentation Batch Tracking Engine",
-      timeline: "4-Week Rapid Sprint",
-      verifiedMetrics: ["24hr Door Dispatch", "WhatsApp Bot Engine", "Zero Spoilage"],
+      statNumber: "Farm-to-Door",
+      statLabel: "Delivery Model",
+      deliverable: "Batch Tracking · WhatsApp Ordering",
+      timeline: "Live in Production",
+      verifiedMetrics: ["Batch Tracking", "WhatsApp Ordering", "Lagos Delivery"],
       liveUrl: "https://www.odundafoodconcept.com/",
       dotColor: "#10b981",
       badgeColor: "bg-emerald-500/10 text-emerald-300 border-emerald-500/30",
       avatarBg: "bg-gradient-to-br from-emerald-500/25 to-teal-700/40 text-emerald-200 border-emerald-500/40",
       initials: "OF",
-    },
-    {
-      id: "tradebridge",
-      category: "trade",
-      sector: "Cross-Border Settlements",
-      quote:
-        "Their multi-currency escrow architecture and customs documentation portal accelerated our international trade clearing times from 7 days down to under 4 hours across 5 African corridors. Truly Silicon Valley caliber engineering.",
-      name: "Operations Directorate",
-      role: "Chief Operating Officer",
-      company: "TradeBridge Global",
-      location: "Pan-African Trade Corridors",
-      statNumber: "4hr",
-      statLabel: "Customs Clearing (from 7 days)",
-      deliverable: "Multi-Currency Escrow Rails · Automated Port Clearance Protocol",
-      timeline: "10-Week Enterprise Rollout",
-      verifiedMetrics: ["$12M+ Monthly Trade", "5 Corridors Active", "4hr Clearing"],
-      liveUrl: null,
-      dotColor: "#a855f7",
-      badgeColor: "bg-purple-500/10 text-purple-300 border-purple-500/30",
-      avatarBg: "bg-gradient-to-br from-purple-500/25 to-indigo-700/40 text-purple-200 border-purple-500/40",
-      initials: "TB",
-    },
-    {
-      id: "farmconnect",
-      category: "agri",
-      sector: "Agritech Field Logistics",
-      quote:
-        "Naijasoft automated our entire field aggregation workflow across 14 rural collection hubs in 8 weeks flat. Field officer productivity shot up by 50% while paperwork reconciliation errors dropped to zero.",
-      name: "Field Operations Directorate",
-      role: "Head of Field Logistics",
-      company: "FarmConnect Africa",
-      location: "Nigeria & Ghana",
-      statNumber: "14",
-      statLabel: "Rural Aggregation Hubs",
-      deliverable: "Offline-First Mobile Sync · Automated Field Collection System",
-      timeline: "8-Week Field Cadence",
-      verifiedMetrics: ["+50% Field Output", "0 Paperwork Errors", "Offline Caching"],
-      liveUrl: null,
-      dotColor: "#22c55e",
-      badgeColor: "bg-green-500/10 text-green-300 border-green-500/30",
-      avatarBg: "bg-gradient-to-br from-green-500/25 to-emerald-700/40 text-green-200 border-green-500/40",
-      initials: "FC",
     },
   ];
 
@@ -401,8 +337,6 @@ export default function LandingPage() {
     { name: "Odunda Foods", tag: "Food & Agriculture", dotColor: "#10b981" },
     { name: "Opti Craft", tag: "Product Engineering", dotColor: "#6366f1" },
     { name: "Care Link", tag: "Hospital Platform", dotColor: "#14b8a6" },
-    { name: "QuickCredit NG", tag: "Digital Lending", dotColor: "#38bdf8" },
-    { name: "TradeBridge Global", tag: "Cross-Border Trade", dotColor: "#a855f7" },
   ];
   // Row 2 — scrolls right
   const marqueeRow2 = [
@@ -411,8 +345,6 @@ export default function LandingPage() {
     { name: "Odunda Foods", tag: "D2C Food Engine", dotColor: "#10b981" },
     { name: "Liberty Pay", tag: "Fintech Rails", dotColor: "#06b6d4" },
     { name: "Opti Craft", tag: "SaaS & Telemetry", dotColor: "#6366f1" },
-    { name: "FarmConnect Africa", tag: "Agritech Logistics", dotColor: "#22c55e" },
-    { name: "Afrinvest Labs", tag: "Venture Builder", dotColor: "#ec4899" },
     { name: "Liberty Assured", tag: "Enterprise Credit", dotColor: "#10b981" },
   ];
 
@@ -434,7 +366,7 @@ export default function LandingPage() {
               { label: "Solutions", href: "#solutions", highlight: false },
               { label: "Why Naijasoft", href: "#why-us", highlight: false },
               { label: "Testimonials", href: "#testimonials", highlight: false },
-              { label: "Investors", href: "#investors", highlight: false },
+              { label: "Contact", href: "#contact", highlight: false },
             ].map((item) => (
               <a
                 key={item.label}
@@ -516,7 +448,7 @@ export default function LandingPage() {
               onClick={() => handleOpenModal("investor")}
               className="px-6 py-3.5 rounded-full bg-emerald-500 text-gray-950 font-manrope font-bold text-[13px] hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/25 flex items-center gap-1.5"
             >
-              <span>Investor Deck</span>
+              <span>Investor Inquiry</span>
               <span className="text-[11px]">↗</span>
             </button>
           </div>
@@ -530,20 +462,20 @@ export default function LandingPage() {
             {/* Card 1 */}
             <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/20">
               <div className="flex items-center justify-between">
-                <p className="font-outfit text-[1.85rem] sm:text-[2rem] font-extrabold text-gray-950 leading-none">150+</p>
+                <p className="font-outfit text-[1.85rem] sm:text-[2rem] font-extrabold text-gray-950 leading-none">Live</p>
                 <div className="w-6 h-6 rounded-full bg-gray-950 flex items-center justify-center">
                   <span className="text-white text-[10px]">↗</span>
                 </div>
               </div>
               <p className="font-manrope text-[11px] text-gray-600 mt-1.5 leading-snug font-medium">
-                Enterprise &amp; venture clients across Africa
+                Production platforms in active use today
               </p>
             </div>
 
             {/* Card 2 */}
             <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/20">
               <div className="flex items-center justify-between">
-                <p className="font-outfit text-[1.85rem] sm:text-[2rem] font-extrabold text-emerald-600 leading-none">$50M+</p>
+                <p className="font-outfit text-[1.85rem] sm:text-[2rem] font-extrabold text-emerald-600 leading-none">Trusted</p>
                 <div className="flex -space-x-1">
                   {["#059669", "#0891b2", "#6366f1"].map((c, i) => (
                     <div key={i} className="w-3.5 h-3.5 rounded-full border border-white" style={{ background: c }} />
@@ -551,18 +483,18 @@ export default function LandingPage() {
                 </div>
               </div>
               <p className="font-manrope text-[11px] text-gray-600 mt-1.5 leading-snug font-medium">
-                Processed monthly with zero downtime
+                By fintech, health, fashion &amp; food-tech brands
               </p>
             </div>
 
             {/* Card 3 */}
             <div className="col-span-2 sm:col-span-1 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/20">
               <div className="flex items-center justify-between">
-                <p className="font-outfit text-[1.85rem] sm:text-[2rem] font-extrabold text-cyan-600 leading-none">99.99%</p>
+                <p className="font-outfit text-[1.85rem] sm:text-[2rem] font-extrabold text-cyan-600 leading-none">Resilient</p>
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
               </div>
               <p className="font-manrope text-[11px] text-gray-600 mt-1.5 leading-snug font-medium">
-                Production SLA &amp; sub-second latency
+                Engineered for African network realities
               </p>
             </div>
           </div>
@@ -571,7 +503,7 @@ export default function LandingPage() {
           <div className="flex items-center justify-between border-t border-white/10 pt-4 text-xs font-manrope text-white/50">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Live Deployments across Nigeria, Ghana, Kenya, Rwanda &amp; South Africa</span>
+              <span>Nigeria-built, engineering for Africa&apos;s growing digital economy</span>
             </div>
 
             <div className="hidden sm:flex items-center gap-2 text-white/40 uppercase tracking-[0.2em] text-[10px]">
@@ -658,48 +590,43 @@ export default function LandingPage() {
           <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-mono font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Audited Engineering Benchmarks</span>
+              <span>Engineering Standards</span>
             </div>
 
             <h2 className="font-outfit text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.08]">
-              Hard Metrics. <br />
-              <span className="gradient-text">Zero Marketing Fluff.</span>
+              Built Right. <br />
+              <span className="gradient-text">Not Just Marketed Well.</span>
             </h2>
 
             <p className="font-manrope text-sm sm:text-base text-gray-300 leading-relaxed font-light">
-              We build high-availability transaction engines, automated data pipelines, and mission-critical software. Every platform deployed by Naijasoft Innovations is monitored for sub-second response times, zero ledger discrepancy, and enterprise fault-tolerance under real-world African infrastructure conditions.
+              We build high-availability transaction engines, automated data pipelines, and mission-critical software — engineered for sub-second response times, data integrity, and enterprise fault-tolerance under real-world African infrastructure conditions.
             </p>
 
-            {/* Live Pan-African Corridor Telemetry */}
+            {/* What "engineered for Africa" means */}
             <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08] space-y-3 backdrop-blur-sm">
               <div className="flex items-center justify-between text-xs font-mono text-gray-400 border-b border-white/[0.06] pb-2">
                 <span className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  <span>Pan-African Latency Monitor</span>
+                  <span>Built For African Infrastructure</span>
                 </span>
-                <span className="text-emerald-400 font-semibold">100% Uptime</span>
               </div>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px] font-mono">
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-mono">
                 <div className="p-2 rounded-lg bg-black/40 border border-white/[0.04]">
-                  <span className="text-gray-400 block">Lagos (NG)</span>
-                  <span className="text-emerald-300 font-bold">12ms</span>
+                  <span className="text-gray-400 block">Offline-First Sync</span>
+                  <span className="text-emerald-300 font-bold">Local Caching</span>
                 </div>
                 <div className="p-2 rounded-lg bg-black/40 border border-white/[0.04]">
-                  <span className="text-gray-400 block">Accra (GH)</span>
-                  <span className="text-cyan-300 font-bold">24ms</span>
+                  <span className="text-gray-400 block">Payment Routing</span>
+                  <span className="text-cyan-300 font-bold">Multi-Switch Failover</span>
                 </div>
                 <div className="p-2 rounded-lg bg-black/40 border border-white/[0.04]">
-                  <span className="text-gray-400 block">Nairobi (KE)</span>
-                  <span className="text-emerald-300 font-bold">32ms</span>
+                  <span className="text-gray-400 block">Low-Bandwidth</span>
+                  <span className="text-emerald-300 font-bold">Asset Compression</span>
                 </div>
                 <div className="p-2 rounded-lg bg-black/40 border border-white/[0.04]">
-                  <span className="text-gray-400 block">Kigali (RW)</span>
-                  <span className="text-cyan-300 font-bold">38ms</span>
-                </div>
-                <div className="p-2 rounded-lg bg-black/40 border border-white/[0.04] col-span-2 sm:col-span-2">
-                  <span className="text-gray-400 block">Johannesburg (ZA)</span>
-                  <span className="text-indigo-300 font-bold">42ms · Encrypted Mesh</span>
+                  <span className="text-gray-400 block">Deployment</span>
+                  <span className="text-cyan-300 font-bold">Nigeria-First</span>
                 </div>
               </div>
             </div>
@@ -718,19 +645,19 @@ export default function LandingPage() {
           {/* Right Column: 6 Refined Bento Benchmark Cards */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
             
-            {/* Tile 1: Transaction Scale ($50M+) */}
+            {/* Tile 1: Transaction Rails */}
             <div className="glass-panel p-6 rounded-3xl border border-white/[0.08] hover:border-emerald-500/30 transition-all space-y-4 group">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-semibold px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
                   Transaction Rails
                 </span>
-                <span className="text-xs font-mono text-gray-500">Monthly</span>
+                <span className="text-xs font-mono text-gray-500">Capability</span>
               </div>
-              <h3 className="font-outfit text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-                $50M+
+              <h3 className="font-outfit text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Built For Scale
               </h3>
               <p className="text-xs sm:text-[13px] text-gray-300 font-manrope leading-relaxed">
-                Processed monthly with bank-grade sub-second settlement and zero ledger reconciliation discrepancy.
+                Engineered for bank-grade sub-second settlement and zero ledger reconciliation discrepancy.
               </p>
               <div className="flex flex-wrap gap-1.5 pt-2 border-t border-white/[0.06]">
                 {["NGN", "USD", "GHS", "KES", "ZAR"].map((curr) => (
@@ -741,7 +668,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Tile 2: High Availability (99.99%) */}
+            {/* Tile 2: High Availability */}
             <div className="glass-panel p-6 rounded-3xl border border-white/[0.08] hover:border-cyan-500/30 transition-all space-y-4 group">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-cyan-400 font-semibold px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
@@ -749,28 +676,28 @@ export default function LandingPage() {
                 </span>
                 <span className="flex items-center gap-1 text-[11px] font-mono text-emerald-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Live SLA
+                  Design Target
                 </span>
               </div>
-              <h3 className="font-outfit text-4xl sm:text-5xl font-extrabold text-cyan-400 tracking-tight">
-                99.99%
+              <h3 className="font-outfit text-3xl sm:text-4xl font-extrabold text-cyan-400 tracking-tight">
+                High Availability
               </h3>
               <p className="text-xs sm:text-[13px] text-gray-300 font-manrope leading-relaxed">
                 Multi-zone decoupled cloud architecture on AWS &amp; GCP with automatic failover and offline data resilience.
               </p>
               <div className="pt-2 border-t border-white/[0.06] text-[11px] font-mono text-gray-400 flex items-center justify-between">
                 <span>Multi-Region Mesh</span>
-                <span className="text-emerald-400">Zero Unplanned Downtime</span>
+                <span className="text-emerald-400">Built For Zero Downtime</span>
               </div>
             </div>
 
-            {/* Tile 3: Sprint Velocity (8 Weeks) */}
+            {/* Tile 3: Sprint Velocity */}
             <div className="glass-panel p-6 rounded-3xl border border-white/[0.08] hover:border-white/20 transition-all space-y-4 group">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-white/80 font-semibold px-2.5 py-1 rounded-full bg-white/[0.06] border border-white/10">
                   Delivery Velocity
                 </span>
-                <span className="text-xs font-mono text-gray-500">Average</span>
+                <span className="text-xs font-mono text-gray-500">Target</span>
               </div>
               <h3 className="font-outfit text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
                 8 Wks
@@ -784,7 +711,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Tile 4: Operational Gain (+50%) */}
+            {/* Tile 4: Operational Automation */}
             <div className="glass-panel p-6 rounded-3xl border border-white/[0.08] hover:border-emerald-500/30 transition-all space-y-4 group">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-semibold px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
@@ -792,11 +719,11 @@ export default function LandingPage() {
                 </span>
                 <span className="text-xs font-mono text-gray-500">Automated</span>
               </div>
-              <h3 className="font-outfit text-4xl sm:text-5xl font-extrabold text-emerald-400 tracking-tight">
-                +50%
+              <h3 className="font-outfit text-3xl sm:text-4xl font-extrabold text-emerald-400 tracking-tight">
+                Automated
               </h3>
               <p className="text-xs sm:text-[13px] text-gray-300 font-manrope leading-relaxed">
-                Reduction in repetitive manual paperwork, automated invoice clearing, and automated customer dispatch.
+                Built to cut repetitive manual paperwork, automated invoice clearing, and automated customer dispatch.
               </p>
               <div className="pt-2 border-t border-white/[0.06] text-[11px] font-mono text-gray-400 flex items-center justify-between">
                 <span>Smart Bots &amp; Pipelines</span>
@@ -804,19 +731,19 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Tile 5: Enterprise Deployments (150+) */}
+            {/* Tile 5: Production Systems */}
             <div className="glass-panel p-6 rounded-3xl border border-white/[0.08] hover:border-teal-500/30 transition-all space-y-4 group">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-teal-400 font-semibold px-2.5 py-1 rounded-full bg-teal-500/10 border border-teal-500/20">
                   Production Systems
                 </span>
-                <span className="text-xs font-mono text-gray-500">Pan-Africa</span>
+                <span className="text-xs font-mono text-gray-500">Nigeria</span>
               </div>
-              <h3 className="font-outfit text-4xl sm:text-5xl font-extrabold text-teal-300 tracking-tight">
-                150+
+              <h3 className="font-outfit text-3xl sm:text-4xl font-extrabold text-teal-300 tracking-tight">
+                Growing
               </h3>
               <p className="text-xs sm:text-[13px] text-gray-300 font-manrope leading-relaxed">
-                Powering regulated fintechs, healthcare networks, luxury e-commerce brands, and cross-border traders.
+                Powering fintechs, healthcare networks, and e-commerce brands in live production today.
               </p>
               <div className="pt-2 border-t border-white/[0.06] text-[11px] font-mono text-gray-400 flex items-center justify-between">
                 <span>Fintech • Health • Retail</span>
@@ -824,23 +751,23 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Tile 6: Pan-African Footprint (05) */}
+            {/* Tile 6: Regional Footprint */}
             <div className="glass-panel p-6 rounded-3xl border border-white/[0.08] hover:border-cyan-500/30 transition-all space-y-4 group">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-cyan-400 font-semibold px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
-                  Market Corridors
+                  Market Focus
                 </span>
-                <span className="text-xs font-mono text-gray-500">Active</span>
+                <span className="text-xs font-mono text-gray-500">Today</span>
               </div>
-              <h3 className="font-outfit text-4xl sm:text-5xl font-extrabold text-cyan-400 tracking-tight">
-                05
+              <h3 className="font-outfit text-3xl sm:text-4xl font-extrabold text-cyan-400 tracking-tight">
+                Nigeria-First
               </h3>
               <p className="text-xs sm:text-[13px] text-gray-300 font-manrope leading-relaxed">
-                Full multi-currency, regulatory compliance, and gateway integrations across NG, GH, KE, RW, and ZA.
+                Built with multi-currency support and cross-border compliance in mind as we grow across Africa.
               </p>
               <div className="pt-2 border-t border-white/[0.06] text-[11px] font-mono text-gray-400 flex items-center justify-between">
-                <span>Cross-Border Compliance</span>
-                <span className="text-cyan-300">Multi-Switch Ready</span>
+                <span>Cross-Border Ready</span>
+                <span className="text-cyan-300">Multi-Switch Architecture</span>
               </div>
             </div>
           </div>
@@ -1204,14 +1131,14 @@ export default function LandingPage() {
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Audited Client Case Evidence</span>
+              <span>Client Case Studies</span>
             </div>
             <h2 className="font-outfit text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.08]">
-              Real Enterprises. Real Growth. <br />
-              <span className="gradient-text">Audited African Impact.</span>
+              Real Projects. <br />
+              <span className="gradient-text">Real Impact.</span>
             </h2>
             <p className="font-manrope text-sm sm:text-base text-gray-300 leading-relaxed font-light">
-              Verifiable outcomes and direct feedback from founders, C-suite executives, and technical leaders scaling mission-critical platforms on Naijasoft digital architecture.
+              A look at what we&apos;ve built for real African businesses — live platforms, not mockups.
             </p>
           </div>
 
@@ -1229,12 +1156,10 @@ export default function LandingPage() {
         {/* Interactive Sector Filter Pills */}
         <div className="flex flex-wrap gap-2 mb-10 pb-2 border-b border-white/[0.06]">
           {[
-            { id: "all", label: "All Sectors (6)" },
-            { id: "fintech", label: "Fintech & Credit Rails" },
+            { id: "all", label: "All Sectors (3)" },
             { id: "health", label: "Hospital & HealthTech" },
             { id: "ecom", label: "Haute Couture & E-Com" },
             { id: "agri", label: "Agri-Food & Field Logistics" },
-            { id: "trade", label: "Cross-Border Trade" },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -1273,7 +1198,7 @@ export default function LandingPage() {
                       {activeTestimonial.sector}
                     </span>
                     <span className="text-xs font-mono text-emerald-400 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/25">
-                      ✓ Audited Production Rollout
+                      ✓ Live in Production
                     </span>
                     <span className="text-xs font-mono text-white/40">
                       {activeTestimonial.timeline}
@@ -1284,8 +1209,8 @@ export default function LandingPage() {
                     &ldquo;{activeTestimonial.quote}&rdquo;
                   </blockquote>
 
-                  {/* 3-Column Quantified Telemetry Strip */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                  {/* 2-Column Deliverable Strip */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                     <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.07]">
                       <span className="font-outfit text-2xl font-extrabold text-emerald-400 block">
                         {activeTestimonial.statNumber}
@@ -1297,19 +1222,10 @@ export default function LandingPage() {
 
                     <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.07]">
                       <span className="font-outfit text-2xl font-extrabold text-cyan-400 block">
-                        {activeTestimonial.timeline.split(" ")[0]}
+                        Live
                       </span>
                       <span className="font-manrope text-[11px] text-gray-400">
-                        Rapid Production Sprints
-                      </span>
-                    </div>
-
-                    <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.07]">
-                      <span className="font-outfit text-2xl font-extrabold text-teal-300 block">
-                        99.99%
-                      </span>
-                      <span className="font-manrope text-[11px] text-gray-400">
-                        Live Core Availability
+                        Deployment Status
                       </span>
                     </div>
                   </div>
@@ -1400,7 +1316,7 @@ export default function LandingPage() {
                     {/* Verified Deliverable Box */}
                     <div className="p-3 rounded-xl bg-black/40 border border-white/[0.05] text-xs font-mono text-emerald-300 flex items-center justify-between">
                       <span className="truncate">{t.deliverable}</span>
-                      <span className="text-[10px] text-white/30 shrink-0 ml-2">Verified</span>
+                      <span className="text-[10px] text-white/30 shrink-0 ml-2">Delivered</span>
                     </div>
                   </div>
 
@@ -1434,7 +1350,7 @@ export default function LandingPage() {
             <div className="flex items-start gap-3">
               <span className="text-emerald-400 font-bold text-base mt-0.5">✓</span>
               <div>
-                <strong className="text-white block font-outfit text-sm">100% On-Time Cadence</strong>
+                <strong className="text-white block font-outfit text-sm">Milestone-Based Delivery</strong>
                 <p className="text-gray-400 text-[11px] mt-0.5">Bi-weekly milestone sprint releases with direct staging previews.</p>
               </div>
             </div>
@@ -1442,16 +1358,16 @@ export default function LandingPage() {
             <div className="flex items-start gap-3">
               <span className="text-cyan-400 font-bold text-base mt-0.5">✓</span>
               <div>
-                <strong className="text-white block font-outfit text-sm">NDPR &amp; SOC2 Standards</strong>
-                <p className="text-gray-400 text-[11px] mt-0.5">Zero-trust cryptographic security &amp; immutable financial audit trails.</p>
+                <strong className="text-white block font-outfit text-sm">NDPR-Conscious Design</strong>
+                <p className="text-gray-400 text-[11px] mt-0.5">Zero-trust security practices &amp; immutable audit logging built into our architecture.</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
               <span className="text-teal-400 font-bold text-base mt-0.5">✓</span>
               <div>
-                <strong className="text-white block font-outfit text-sm">Sub-Second Latency</strong>
-                <p className="text-gray-400 text-[11px] mt-0.5">Optimized edge routing across Lagos, Accra, Nairobi, Kigali &amp; Joburg.</p>
+                <strong className="text-white block font-outfit text-sm">Low-Latency Architecture</strong>
+                <p className="text-gray-400 text-[11px] mt-0.5">Edge-optimized routing designed for fast response times across Africa.</p>
               </div>
             </div>
 
@@ -1460,204 +1376,6 @@ export default function LandingPage() {
               <div>
                 <strong className="text-white block font-outfit text-sm">Dedicated Lead Architect</strong>
                 <p className="text-gray-400 text-[11px] mt-0.5">Direct C-level partnership with zero junior developer handoffs.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. INSTITUTIONAL INVESTORS & VENTURE HIGHLIGHTS */}
-      <section id="investors" className="relative z-10 py-24 bg-[#080d1a]/95 border-y border-white/[0.08]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Column: Thesis & IP Moats */}
-            <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-400 text-xs font-mono font-semibold">
-                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                <span>Institutional Investors &amp; Venture Capital</span>
-              </div>
-              
-              <h2 className="font-outfit text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                Architecting Africa&apos;s $45B+ <br />
-                <span className="gradient-text">Software Economy</span>
-              </h2>
-              
-              <p className="font-manrope text-sm sm:text-base text-gray-300 leading-relaxed font-light">
-                Naijasoft Innovations builds the mission-critical digital infrastructure, fintech payment rails, and enterprise automation software powering African commercial expansion.
-              </p>
-
-              <div className="space-y-3.5 font-manrope text-sm text-gray-200">
-                <div className="flex items-start gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-white/20 transition-colors">
-                  <span className="text-cyan-400 font-bold shrink-0 mt-0.5">✓</span>
-                  <div>
-                    <strong className="text-white block font-outfit text-base">High-Margin Unit Economics:</strong>
-                    <p className="text-xs text-gray-400 mt-1 font-light">Capital-efficient, cash-flow positive with recurring high-ticket enterprise SLA retainers and zero high-burn dependencies.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-white/20 transition-colors">
-                  <span className="text-cyan-400 font-bold shrink-0 mt-0.5">✓</span>
-                  <div>
-                    <strong className="text-white block font-outfit text-base">Contextual African Moats:</strong>
-                    <p className="text-xs text-gray-400 mt-1 font-light">Resilient offline sync, multi-switch payment routers, and USSD/WhatsApp fallback pipelines built for African network realpolitik.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-white/20 transition-colors">
-                  <span className="text-cyan-400 font-bold shrink-0 mt-0.5">✓</span>
-                  <div>
-                    <strong className="text-white block font-outfit text-base">Top 1% Engineering Density:</strong>
-                    <p className="text-xs text-gray-400 mt-1 font-light">Senior in-house African systems architects and cloud engineers with zero outsourced dependencies.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-2 flex flex-wrap items-center gap-3">
-                <button
-                  onClick={() => handleOpenModal("investor")}
-                  className="px-6 py-3.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-gray-950 font-outfit font-bold text-xs sm:text-sm hover:opacity-95 transition-opacity flex items-center gap-2 shadow-lg shadow-cyan-500/20"
-                >
-                  <span>Request Investor Deck &amp; Data Room</span>
-                  <span className="text-xs">↗</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Right Column: Interactive Executive Telemetry Dashboard */}
-            <div className="lg:col-span-6 glass-panel rounded-3xl p-8 border border-white/[0.08] space-y-6">
-              <div className="flex items-center justify-between pb-4 border-b border-white/[0.06]">
-                <div>
-                  <h3 className="font-outfit text-xl font-bold text-white">Executive Traction Summary</h3>
-                  <p className="font-manrope text-xs text-gray-400">Audited Financial &amp; Operational Metrics</p>
-                </div>
-                <span className="text-xs font-mono text-emerald-400 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
-                  Q3 2026 Live
-                </span>
-              </div>
-
-              {/* Interactive Telemetry Tab Switcher */}
-              <div className="flex bg-black/50 p-1 rounded-xl border border-white/[0.06]">
-                {[
-                  { id: "financials", label: "Financial Growth" },
-                  { id: "engineering", label: "Engineering SLA" },
-                  { id: "corridors", label: "Pan-African TAM" },
-                ].map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setInvestorTab(tab.id as any)}
-                    className={`flex-1 py-2 text-xs font-manrope font-semibold rounded-lg transition-all ${
-                      investorTab === tab.id
-                        ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shadow-sm"
-                        : "text-gray-400 hover:text-white"
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
-
-              {/* Dynamic 4-Card Bento Display */}
-              {investorTab === "financials" && (
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.06] space-y-1">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase">YoY Enterprise Growth</span>
-                    <p className="font-outfit text-3xl font-extrabold text-emerald-400">+185%</p>
-                    <p className="text-[10px] font-manrope text-gray-500">Compounded Enterprise ARR</p>
-                  </div>
-
-                  <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.06] space-y-1">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase">Net Revenue Retention</span>
-                    <p className="font-outfit text-3xl font-extrabold text-cyan-400">138%</p>
-                    <p className="text-[10px] font-manrope text-gray-500">Zero Enterprise Churn</p>
-                  </div>
-
-                  <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.06] space-y-1">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase">Monthly GMV Run-Rate</span>
-                    <p className="font-outfit text-3xl font-extrabold text-white">$50M+</p>
-                    <p className="text-[10px] font-manrope text-gray-500">Processed Platform Volume</p>
-                  </div>
-
-                  <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.06] space-y-1">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase">Software Gross Margin</span>
-                    <p className="font-outfit text-3xl font-extrabold text-teal-300">92%</p>
-                    <p className="text-[10px] font-manrope text-gray-500">Infrastructure Retainers</p>
-                  </div>
-                </div>
-              )}
-
-              {investorTab === "engineering" && (
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.06] space-y-1">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase">Production Uptime SLA</span>
-                    <p className="font-outfit text-3xl font-extrabold text-emerald-400">99.99%</p>
-                    <p className="text-[10px] font-manrope text-gray-500">Multi-Region Redundancy</p>
-                  </div>
-
-                  <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.06] space-y-1">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase">Regional Edge Latency</span>
-                    <p className="font-outfit text-3xl font-extrabold text-cyan-400">12ms</p>
-                    <p className="text-[10px] font-manrope text-gray-500">Optimized West African Nodes</p>
-                  </div>
-
-                  <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.06] space-y-1">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase">Financial Ledger Error</span>
-                    <p className="font-outfit text-3xl font-extrabold text-white">0.00%</p>
-                    <p className="text-[10px] font-manrope text-gray-500">1.2M+ Audited Transactions</p>
-                  </div>
-
-                  <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.06] space-y-1">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase">Talent Retention</span>
-                    <p className="font-outfit text-3xl font-extrabold text-teal-300">96%</p>
-                    <p className="text-[10px] font-manrope text-gray-500">Top 1% African Engineers</p>
-                  </div>
-                </div>
-              )}
-
-              {investorTab === "corridors" && (
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.06] space-y-1">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase">Addressable Market</span>
-                    <p className="font-outfit text-3xl font-extrabold text-emerald-400">$45B+</p>
-                    <p className="text-[10px] font-manrope text-gray-500">African Digital Transformation</p>
-                  </div>
-
-                  <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.06] space-y-1">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase">Operating Corridors</span>
-                    <p className="font-outfit text-3xl font-extrabold text-cyan-400">5</p>
-                    <p className="text-[10px] font-manrope text-gray-500">NG, GH, KE, RW, ZA</p>
-                  </div>
-
-                  <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.06] space-y-1">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase">Underserved Enterprise</span>
-                    <p className="font-outfit text-3xl font-extrabold text-white">65%</p>
-                    <p className="text-[10px] font-manrope text-gray-500">Mid-Market Software Gap</p>
-                  </div>
-
-                  <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.06] space-y-1">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase">Quarterly Inbound Demand</span>
-                    <p className="font-outfit text-3xl font-extrabold text-teal-300">2.4x</p>
-                    <p className="text-[10px] font-manrope text-gray-500">Enterprise Deal Velocity</p>
-                  </div>
-                </div>
-              )}
-
-              {/* Data Room Access Box */}
-              <div className="p-4 rounded-2xl bg-cyan-500/[0.06] border border-cyan-500/20 text-xs font-manrope text-gray-300 flex items-start justify-between gap-3">
-                <div className="space-y-1">
-                  <span className="text-cyan-400 font-mono font-bold block text-[11px]">
-                    🔒 ENCRYPTED DATA ROOM READY
-                  </span>
-                  <p className="text-gray-400 leading-relaxed text-[11px]">
-                    Direct syndicate discussions are open for institutional venture funds, family offices, and strategic corporate VCs.
-                  </p>
-                </div>
-                <button
-                  onClick={() => handleOpenModal("investor")}
-                  className="px-3.5 py-2 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 text-xs font-outfit font-bold hover:bg-cyan-500/30 transition-all shrink-0 self-center"
-                >
-                  Access Room →
-                </button>
               </div>
             </div>
           </div>
@@ -1873,7 +1591,7 @@ export default function LandingPage() {
                 onClick={() => handleOpenModal("investor")}
                 className="px-7 py-4 rounded-2xl bg-gray-900/90 hover:bg-gray-800 text-gray-200 border border-gray-700 font-outfit font-semibold text-sm sm:text-base transition-all"
               >
-                Request Investor Deck
+                Investor Inquiry
               </button>
             </div>
           </div>
@@ -1910,7 +1628,7 @@ export default function LandingPage() {
                 <li><a href="#solutions" className="hover:text-emerald-400 transition-colors">Solutions Matrix</a></li>
                 <li><a href="#why-us" className="hover:text-emerald-400 transition-colors">Why Naijasoft</a></li>
                 <li><a href="#testimonials" className="hover:text-emerald-400 transition-colors">Testimonials</a></li>
-                <li><a href="#investors" className="hover:text-cyan-400 transition-colors">Investor Relations</a></li>
+                <li><a href="#contact" className="hover:text-cyan-400 transition-colors">Investor Inquiries</a></li>
               </ul>
             </div>
 

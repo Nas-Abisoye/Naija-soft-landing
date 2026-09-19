@@ -102,7 +102,7 @@ export function ConsultationModal({
                 <div className="flex items-center justify-between">
                   <span className="text-gray-500 font-medium">Inquiry Type:</span>
                   <span className="text-white font-semibold">
-                    {inquiryType === "client" ? "Technical Build / Custom Software" : "Investor Relations & Deck"}
+                    {inquiryType === "client" ? "Technical Build / Custom Software" : "Investor / Partnership Inquiry"}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -150,7 +150,7 @@ export function ConsultationModal({
                       : "text-gray-400 hover:text-white"
                   }`}
                 >
-                  Investor Deck &amp; Syndicate
+                  Investor / Partnership
                 </button>
               </div>
 
@@ -159,7 +159,7 @@ export function ConsultationModal({
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-mono font-semibold">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   <span>
-                    {inquiryType === "client" ? "Principal Architect Intake" : "Institutional VC & Syndicate Intake"}
+                    {inquiryType === "client" ? "Principal Architect Intake" : "Investor & Partnership Intake"}
                   </span>
                 </div>
                 <h3 className="font-outfit text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
@@ -170,7 +170,7 @@ export function ConsultationModal({
                 <p className="font-manrope text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
                   {inquiryType === "client"
                     ? "Tell us about your venture goals. We architect high-availability custom software, payment rails, and enterprise automation."
-                    : "Access our confidential investor deck, audited financial traction telemetry, and Pan-African expansion roadmap."}
+                    : "Tell us about your fund or partnership interest and we'll follow up directly to discuss."}
                 </p>
               </div>
 
@@ -316,7 +316,7 @@ export function ConsultationModal({
                     className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 text-gray-950 font-outfit font-bold text-sm tracking-wide transition-all duration-200 shadow-xl shadow-emerald-500/20 hover:shadow-emerald-500/35 flex items-center justify-center gap-2 group"
                   >
                     <span>
-                      {inquiryType === "client" ? "Submit Technical Consultation Request" : "Request Investor Deck & Data Room"}
+                      {inquiryType === "client" ? "Submit Technical Consultation Request" : "Send Investor Inquiry"}
                     </span>
                     <span className="transition-transform group-hover:translate-x-1 font-bold">→</span>
                   </button>
